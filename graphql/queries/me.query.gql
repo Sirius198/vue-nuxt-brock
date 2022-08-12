@@ -1,0 +1,25 @@
+#import '../fragments/unit.gql'
+
+query Me {
+  me {
+    id
+    firstName
+    lastName
+    selectedUnit {
+      ...UnitFragment
+      activePeriod {
+        id
+        periodEnd
+        year
+        month
+        week
+      }
+    }
+    email
+    units {
+      ...UnitFragment
+    }
+    isAdmin
+    isActive
+  }
+}
